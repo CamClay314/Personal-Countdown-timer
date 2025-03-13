@@ -1,5 +1,6 @@
 import requests
-from flask import Flask, render_template;
+import os
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
@@ -19,11 +20,9 @@ def home():
         quote = "Could not fetch quote at this time."
         author = ""
         print(f"Error fetching quote: {e}")
-    import os
 
-    debug_mode = os.getenv('FLASK_DEBUG', 'False').lower() in ['true', '1', 't']
-    app.run(debug=debug_mode)
     return render_template('index.html', quote=quote, author=author)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    debug_mode = os.getenv('FLASK_DEBUG', 'False').lower() in ['true', '1', 't']
+    app.run(debug=debug_mode)
