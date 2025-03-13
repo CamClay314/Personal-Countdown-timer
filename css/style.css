@@ -219,6 +219,7 @@ body {
   box-shadow: 0px 0px 15px rgba(0, 255, 255, 0.7); /* Glowing border effect */
   margin-top: 20px;
   appearance: none;
+  margin-bottom: 50px; /* Space between the progress bar and the button */
 }
 
 progress::-webkit-progress-bar {
