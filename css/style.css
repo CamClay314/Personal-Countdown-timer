@@ -1,23 +1,238 @@
-body {background-color: #92a8d1;}
+/* Cyberpunk Background */
+body {
+  background-color: #1c1c1c; /* Dark background for a futuristic look */
+  font-family: 'Orbitron', sans-serif; /* Monospace font for a digital feel */
+  color: #fff; /* White text color for contrast */
+}
 
+/* Container with a neon border */
 .center {
-    text-align: center;
-    border: 3px solid rgb(5, 99, 33);
-    border-radius: 25px;
+  text-align: center;
+  border: 3px solid #00ff99; /* Neon green border for cyberpunk look */
+  border-radius: 30px;
+  background: linear-gradient(45deg, rgba(0, 255, 153, 0.3), rgba(255, 0, 255, 0.3)); /* Glowing background */
+  padding: 20px;
+  box-shadow: 0px 0px 15px rgba(0, 255, 255, 0.7); /* Glowing border effect */
+}
+
+/* Inner container with a futuristic look */
+.center2 {
+  margin: auto;
+  width: 60%;
+  border: 1px solid #ff00ff; /* Neon purple border */
+  padding: 20px;
+  border-radius: 20px;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  box-shadow: 0px 0px 10px rgba(255, 0, 255, 0.6); /* Neon glow effect */
+}
+
+/* Countdown Timer with Neon Glowing Effect */
+#countdown {
+  font-size: 48px;
+  font-weight: bold;
+  color: #00ff99; /* Neon green text for countdown */
+  text-shadow: 0px 0px 10px #00ff99, 0px 0px 20px #00ff99, 0px 0px 30px #00ff99; /* Glowing text */
+  margin-top: 20px;
+  letter-spacing: 2px;
+  animation: neon-flicker 1.5s infinite alternate; /* Neon flicker animation */
+}
+
+/* Reset button with Cyberpunk style */
+#resetButton {
+  background-color: #ff00ff; /* Neon pink button */
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 50px;
+  font-size: 18px;
+  cursor: pointer;
+  box-shadow: 0px 0px 10px #ff00ff; /* Neon glow effect */
+  transition: background-color 0.3s ease-in-out;
+}
+
+#resetButton:hover {
+  background-color: #00ff99; /* Neon green on hover */
+  box-shadow: 0px 0px 20px #00ff99;
+}
+
+/* Neon flicker effect animation */
+@keyframes neon-flicker {
+  0% {
+      text-shadow: 0px 0px 10px #00ff99, 0px 0px 20px #00ff99, 0px 0px 30px #00ff99;
   }
-
-  .center2 {
-    margin: auto;
-    width: 50%;
-    border: 3px solid rgb(7, 165, 144);
-    padding: 10px;
-    border-radius: 25px;
+  50% {
+      text-shadow: 0px 0px 5px #00ff99, 0px 0px 15px #00ff99, 0px 0px 25px #00ff99;
   }
+  100% {
+      text-shadow: 0px 0px 10px #00ff99, 0px 0px 20px #00ff99, 0px 0px 30px #00ff99;
+  }
+}
+/* Cyberpunk-themed Countdown Timer Styles */
 
-  #rcorners2 {
-    border-radius: 25px;
-    border: 2px solid #73AD21;
-    padding: 20px;
-    width: 200px;
-    height: 150px; }
+/* Laser Sword Charging */
+.laser-sword {
+  position: relative;
+  width: 100px;
+  height: 20px;
+  background: #222;
+  border-radius: 10px;
+  box-shadow: 0 0 15px #00ff99;
+}
 
+.laser-sword-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: linear-gradient(90deg, #ff00ff, #00ff99);
+  width: 0;
+  border-radius: 10px;
+  animation: swordCharge 10s infinite;
+}
+
+@keyframes swordCharge {
+  0% { width: 0; }
+  100% { width: 100%; }
+}
+
+/* Digital Countdown with Neon Effect */
+.digital-timer {
+  font-family: 'Digital-7', monospace;
+  font-size: 80px;
+  color: #00ff99;
+  text-shadow: 0 0 8px #00ff99, 0 0 20px #ff00ff, 0 0 40px #00ff99;
+  animation: glitchEffect 1s infinite alternate;
+}
+
+@keyframes glitchEffect {
+  0% { opacity: 1; transform: skew(0.2deg); }
+  50% { opacity: 0.5; transform: skew(-0.2deg); }
+  100% { opacity: 1; transform: skew(0.2deg); }
+}
+
+/* Cyberpunk Progress Bar (Energy Core) */
+.progress-bar {
+  width: 100%;
+  height: 30px;
+  background-color: #1a1a1a;
+  border-radius: 15px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+}
+
+.progress-bar-fill {
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg, #ff00ff, #00ff99);
+  border-radius: 15px;
+  position: absolute;
+  animation: progressFill 10s linear forwards;
+}
+
+@keyframes progressFill {
+  0% { width: 0; }
+  100% { width: 100%; }
+}
+
+/* Holographic Projection */
+.hologram-projection {
+  font-family: 'Digital-7', monospace;
+  color: #ff00ff;
+  font-size: 100px;
+  text-shadow: 0 0 10px rgba(0, 255, 255, 0.6), 0 0 20px #ff00ff, 0 0 40px rgba(255, 0, 255, 1);
+  animation: hologramAnimation 5s ease-in-out infinite;
+}
+
+@keyframes hologramAnimation {
+  0% { opacity: 0; transform: translateY(-50%) rotate(15deg); }
+  50% { opacity: 1; transform: translateY(0) rotate(0); }
+  100% { opacity: 0; transform: translateY(50%) rotate(-15deg); }
+}
+
+/* Cybernetic Countdown Timer (Augmented Reality) */
+.cyber-ar-timer {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #222, #444);
+  box-shadow: 0 0 20px #00ff99;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cyber-ar-timer::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 4px solid #00ff99;
+  border-radius: 50%;
+  animation: rotateCircles 5s linear infinite;
+}
+
+.cyber-ar-timer h2 {
+  color: #00ff99;
+  font-family: 'Digital-7', monospace;
+  font-size: 60px;
+  text-shadow: 0 0 8px #00ff99, 0 0 20px #ff00ff;
+}
+
+@keyframes rotateCircles {
+  0% { transform: rotate(0); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Futuristic Tachometer */
+.tachometer {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: conic-gradient(#ff00ff 0%, #00ff99 100%);
+}
+
+.needle {
+  position: absolute;
+  width: 4px;
+  height: 80px;
+  background: #00ff99;
+  top: 50%;
+  left: 50%;
+  transform-origin: 50% 100%;
+  transform: rotate(0deg);
+  animation: moveNeedle 10s linear forwards;
+}
+
+@keyframes moveNeedle {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(270deg); }
+}
+/* Cyberpunk-themed Progress Bar */
+.progress-bar {
+  width: 100%;
+  height: 20px;
+  background-color: #222;
+  border-radius: 10px;
+  box-shadow: 0px 0px 15px rgba(0, 255, 255, 0.7); /* Glowing border effect */
+  margin-top: 20px;
+  appearance: none;
+}
+
+progress::-webkit-progress-bar {
+  background-color: #1c1c1c;
+}
+
+progress::-webkit-progress-value {
+  background: linear-gradient(90deg, #ff00ff, #00ff99);
+  border-radius: 10px;
+  box-shadow: 0px 0px 15px rgba(0, 255, 255, 0.7); /* Neon glow effect */
+}
+
+progress::-moz-progress-bar {
+  background: linear-gradient(90deg, #ff00ff, #00ff99);
+  border-radius: 10px;
+  box-shadow: 0px 0px 15px rgba(0, 255, 255, 0.7);
+}

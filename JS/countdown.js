@@ -4,10 +4,11 @@ let timer;
 // Function to start the countdown
 function startCountdown(seconds) {
     const actually_counting_down = document.getElementById("countdown");
+    const progressBar = document.getElementById("timeProgress");
 
     // Check if the countdown element exists
-    if (!actually_counting_down) {
-        console.error("Countdown element not found!");
+    if (!actually_counting_down || !progressBar) {
+        console.error("Countdown or progress bar element not found!");
         return;
     }
 
@@ -21,12 +22,18 @@ function startCountdown(seconds) {
     timer = setInterval(function() {
         seconds--;
 
+        // Calculate percentage of time passed
+        let percentage = ((600 - seconds) / 600) * 100;
+        progressBar.value = percentage; // Update the progress bar
+
         if (seconds < 0) {
             clearInterval(timer);
             timer = null;
             actually_counting_down.innerText = "Time's up!";
         } else {
-            actually_counting_down.innerText = seconds + " seconds remaining";
+            const minutes = Math.floor(seconds / 60);
+            const remainingSeconds = seconds % 60;
+            actually_counting_down.innerText = `${minutes} minutes ${remainingSeconds} seconds remaining`;
         }
     }, 1000);
 }
@@ -42,7 +49,7 @@ const resetButton = document.getElementById("resetButton");
 if (resetButton) {
     console.log("Reset button found! Adding event listener...");
     resetButton.addEventListener("click", function() {
-        resetCountdown(600); // Pass the initial seconds value to reset the timer
+        resetCountdown(600 + 1); // Pass the initial seconds value to reset the timer
     });
 } else {
     console.error("Reset button not found!");
@@ -51,10 +58,11 @@ if (resetButton) {
 // Start the countdown when the window loads
 window.onload = function() {
     const actually_counting_down = document.getElementById("countdown");
-    if (actually_counting_down) {
+    const progressBar = document.getElementById("timeProgress");
+    if (actually_counting_down && progressBar) {
         console.log("Page loaded. Starting countdown...");
-        startCountdown(600); // Start the countdown with initial 10 seconds
+        startCountdown(600 + 1); // Start the countdown with initial 600 seconds
     } else {
-        console.error("Countdown element not found!");
+        console.error("Countdown or progress bar element not found!");
     }
 };
