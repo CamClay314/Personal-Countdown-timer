@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Countdown Timer</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="css/style.css" rel="stylesheet">
+    <link href="app/static/css/style.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -17,8 +17,11 @@
             <progress id="timeProgress" value="0" max="100" class="progress-bar"></progress> <!-- Progress Bar -->
             <button id="resetButton" type="button">Reset Timer</button>
         </div>
-        <p><i>"My key to dealing with stress is simple: just stay cool and stay focused." - Ashton Eaton</i></p>
-
+        <p>"{{ quote }}"</p>
+        <p>- {{ author }}</p>
+        <button onclick="window.location.reload()">Get Another Quote</button>
+        <!--<p><i>"My key to dealing with stress is simple: just stay cool and stay focused." - Ashton Eaton</i></p>
+    -->
     </div>
     
     <script src="JS/countdown.js"></script> 

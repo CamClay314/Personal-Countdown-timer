@@ -1,6 +1,6 @@
 // Global variable to store the timer ID
 let timer;
-const countdownDuration = 120;
+const countdownDuration = 300;
 
 // Function to start the countdown
 function startCountdown(seconds) {
