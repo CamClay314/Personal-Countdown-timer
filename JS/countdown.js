@@ -1,5 +1,6 @@
 // Global variable to store the timer ID
 let timer;
+const countdownDuration = 120;
 
 // Function to start the countdown
 function startCountdown(seconds) {
@@ -23,7 +24,7 @@ function startCountdown(seconds) {
         seconds--;
 
         // Calculate percentage of time passed
-        let percentage = ((600 - seconds) / 600) * 100;
+        let percentage = ((countdownDuration - seconds) / countdownDuration) * 100;
         progressBar.value = percentage; // Update the progress bar
 
         if (seconds < 0) {
@@ -49,7 +50,7 @@ const resetButton = document.getElementById("resetButton");
 if (resetButton) {
     console.log("Reset button found! Adding event listener...");
     resetButton.addEventListener("click", function() {
-        resetCountdown(600 + 1); // Pass the initial seconds value to reset the timer
+        resetCountdown(countdownDuration + 1); // Pass the initial seconds value to reset the timer
     });
 } else {
     console.error("Reset button not found!");
@@ -61,7 +62,7 @@ window.onload = function() {
     const progressBar = document.getElementById("timeProgress");
     if (actually_counting_down && progressBar) {
         console.log("Page loaded. Starting countdown...");
-        startCountdown(600 + 1); // Start the countdown with initial 600 seconds
+        startCountdown(countdownDuration + 1); // Start the countdown with initial coubtdownDuration seconds
     } else {
         console.error("Countdown or progress bar element not found!");
     }
